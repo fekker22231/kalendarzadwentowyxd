@@ -55,6 +55,4 @@ const run = async() =>  {
     }
 }
 
-cron.schedule('30 * * * *', run)
-
 run()
