@@ -25,6 +25,7 @@ const contact = (msg) => {
 }
 
 const run = async() =>  {
+    console.log('Beginning work!')
     const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     const page = await browser.newPage();
     await page.setExtraHTTPHeaders({
@@ -39,6 +40,8 @@ const run = async() =>  {
     var element2 = await page.waitFor(".add-item")
     var text = await page.evaluate(element => element.textContent, element)
     var text2 = await page.evaluate(element2 => element2.textContent, element2)
+
+    console.log('Work done, results below.')
 
     if(text){
         console.log('NIE MA KALENDARZA ADWENTOWEGO')
